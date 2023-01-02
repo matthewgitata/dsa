@@ -32,5 +32,10 @@ public class Main {
         System.out.println("\nSearch for Array element");
         sda.searchInArray(8);
         sda.searchInArray(75);
+
+        // Delete value from array
+        System.out.println("\nDelete value from array");
+        sda.deleteValue(3);
+        sda.searchInArray(8);
     }
 }
