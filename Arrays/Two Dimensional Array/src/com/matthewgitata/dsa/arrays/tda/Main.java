@@ -10,7 +10,12 @@ public class Main {
     public static void main(String[] args) {
         TwoDimensionalArray tda = new TwoDimensionalArray(3, 3);
         tda.insertValueInTheArray(0, 0, 3);
-        tda.insertValueInTheArray(0, 0, 3);
+        tda.insertValueInTheArray(0, 1, 8);
+        tda.insertValueInTheArray(1, 0, 5);
+        tda.insertValueInTheArray(1, 1, 7);
+        tda.insertValueInTheArray(2, 2, 5);
         System.out.println(Arrays.deepToString(tda.arr));
+
+        tda.accessCell(0, 0);
     }
 }
