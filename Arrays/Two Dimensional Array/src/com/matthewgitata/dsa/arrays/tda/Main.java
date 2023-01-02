@@ -15,7 +15,13 @@ public class Main {
         tda.insertValueInTheArray(1, 1, 7);
         tda.insertValueInTheArray(2, 2, 5);
         System.out.println(Arrays.deepToString(tda.arr));
+        System.out.println();
 
+        // Accessing cell value from given array
         tda.accessCell(0, 0);
+
+        // Traversing 2D Array
+        System.out.println("\nTraversing the array.");
+        tda.traverse2DArray();
     }
 }
