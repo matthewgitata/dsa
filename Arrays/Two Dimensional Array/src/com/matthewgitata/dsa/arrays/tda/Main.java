@@ -28,5 +28,9 @@ public class Main {
         // Searching 2D Array
         tda.searchingValue(8);
         tda.searchingValue(13);
+
+        // Delete a value from Array
+        tda.deleteValueFromArray(0, 0);
+        System.out.println(Arrays.deepToString(tda.arr));
     }
 }
