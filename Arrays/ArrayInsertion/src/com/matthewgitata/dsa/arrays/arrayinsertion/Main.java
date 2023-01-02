@@ -22,5 +22,8 @@ public class Main {
         System.out.println("First element: " + firstElement);
         var fourthElement = sda.arr[3];
         System.out.println("Fourth element: " + fourthElement);
+
+        // Traverse array
+        sda.traverseArray();
     }
 }

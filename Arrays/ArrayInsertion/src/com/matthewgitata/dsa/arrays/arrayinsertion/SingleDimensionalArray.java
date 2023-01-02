@@ -14,6 +14,7 @@ public class SingleDimensionalArray {
         }
     }
 
+    // Array Insertion
     public void insert(int location, int valueToBeInserted) {
         try {
             if (arr[location] == Integer.MIN_VALUE) {
@@ -25,6 +26,17 @@ public class SingleDimensionalArray {
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Invalid index to access an array.");
         }
-
     }
+
+    // Array Traversal
+    public void traverseArray() {
+        try {
+            for (int index = 0; index < arr.length; index++) {
+                System.out.print(arr[index] + " ");
+            }
+        } catch (Exception e) {
+            System.out.println("Array no longer exists!");
+        }
+    }
+
 }
