@@ -24,6 +24,13 @@ public class Main {
         System.out.println("Fourth element: " + fourthElement);
 
         // Traverse array
+        System.out.println("\nArray traversal.");
         sda.traverseArray();
+        System.out.println();
+
+        // Search for array element
+        System.out.println("\nSearch for Array element");
+        sda.searchInArray(8);
+        sda.searchInArray(75);
     }
 }
