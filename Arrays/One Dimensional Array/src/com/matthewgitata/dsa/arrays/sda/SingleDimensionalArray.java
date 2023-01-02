@@ -1,4 +1,4 @@
-package com.matthewgitata.dsa.arrays.arrayinsertion;
+package com.matthewgitata.dsa.arrays.sda;
 
 /**
  * created by @matthewgitata on 02/01/2023
