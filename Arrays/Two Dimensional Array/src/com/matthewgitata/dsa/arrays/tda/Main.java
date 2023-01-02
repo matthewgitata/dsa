@@ -23,5 +23,10 @@ public class Main {
         // Traversing 2D Array
         System.out.println("\nTraversing the array.");
         tda.traverse2DArray();
+        System.out.println();
+
+        // Searching 2D Array
+        tda.searchingValue(8);
+        tda.searchingValue(13);
     }
 }
