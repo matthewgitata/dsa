@@ -10,5 +10,10 @@ public class Main {
         SinglyLinkedList sLL = new SinglyLinkedList();
         sLL.createSinglyLinkedList(5);
         System.out.println(sLL.head.value);
+        sLL.insertInLinkedList(3, 0);
+        sLL.insertInLinkedList(8, 2);
+        System.out.println(sLL.head.value);
+        System.out.println(sLL.head.next.value);
+        System.out.println(sLL.head.next.next.value);
     }
 }

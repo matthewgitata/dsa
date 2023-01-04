@@ -16,7 +16,7 @@ public class SinglyLinkedList {
      * Creates a singly linked list.
      *
      * @param nodeValue value of node
-     * @return head reference of the list.
+     * @return head reference of the linked list.
      */
     public Node createSinglyLinkedList(int nodeValue) {
         head = new Node();
@@ -27,5 +27,38 @@ public class SinglyLinkedList {
         tail = node;
         size = 1;
         return head;
+    }
+
+    /**
+     * Inserts an element in a linked list.
+     *
+     * @param nodeValue value of node
+     * @param location  location to insert element in the linked list
+     */
+    public void insertInLinkedList(int nodeValue, int location) {
+        Node node = new Node();
+        node.value = nodeValue;
+        if (head == null) {
+            createSinglyLinkedList(nodeValue);
+            return;
+        } else if (location == 0) {
+            node.next = head;
+            head = node;
+        } else if (location >= size) {
+            node.next = null;
+            tail.next = node;
+            tail = node;
+        } else {
+            Node tempNode = head;
+            int index = 0;
+            while (index < location - 1) {
+                tempNode = tempNode.next;
+                index++;
+            }
+            Node nextNode = tempNode.next;
+            tempNode.next = node;
+            node.next = nextNode;
+        }
+        size++;
     }
 }
