@@ -24,5 +24,9 @@ public class Main {
         System.out.println(sLL.head.next.next.next.next.value);
         System.out.println("SLL Traversal.");
         sLL.traverseLinkedList();
+        System.out.println("SLL Search.");
+        sLL.searchNode(6);
+        sLL.searchNode(8);
+        sLL.searchNode(5);
     }
 }

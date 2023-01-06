@@ -81,4 +81,23 @@ public class SinglyLinkedList {
         }
         System.out.println("");
     }
+
+    /**
+     * Finds a node value in a singly linked list.
+     *
+     * @param nodeValue the node value to look for
+     */
+    public void searchNode(int nodeValue) {
+        if (head != null) {
+            Node tempNode = head;
+            for (int i = 0; i < size; i++) {
+                if (tempNode.value == nodeValue) {
+                    System.out.print("The node is found at position: " + i + "\n");
+                    return;
+                }
+                tempNode = tempNode.next;
+            }
+            System.out.println("Node not found");
+        }
+    }
 }
