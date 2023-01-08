@@ -32,5 +32,8 @@ public class Main {
         sLL.deletionOfNode(5);
         sLL.traverseLinkedList();
         System.out.println(sLL.head.value);
+        System.out.println("\n nSLL, Deletion");
+        sLL.deleteSLL();
+        sLL.traverseLinkedList();
     }
 }

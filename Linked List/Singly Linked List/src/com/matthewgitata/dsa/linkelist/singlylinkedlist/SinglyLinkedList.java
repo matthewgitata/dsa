@@ -138,4 +138,13 @@ public class SinglyLinkedList {
             size--;
         }
     }
+
+    /**
+     * Deletes entire Singly Linked List.
+     */
+    public void deleteSLL() {
+        head = null;
+        tail = null;
+        System.out.println("SLL deleted successfully.");
+    }
 }
