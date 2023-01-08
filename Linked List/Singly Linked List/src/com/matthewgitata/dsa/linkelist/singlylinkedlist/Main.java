@@ -22,11 +22,15 @@ public class Main {
         System.out.print(sLL.head.next.next.value);
         System.out.print(sLL.head.next.next.next.value);
         System.out.println(sLL.head.next.next.next.next.value);
-        System.out.println("SLL Traversal.");
+        System.out.println("\nSLL Traversal.");
         sLL.traverseLinkedList();
-        System.out.println("SLL Search.");
+        System.out.println("\nSLL Search.");
         sLL.searchNode(6);
         sLL.searchNode(8);
         sLL.searchNode(5);
+        System.out.println("\nSLL Node Deletion.");
+        sLL.deletionOfNode(5);
+        sLL.traverseLinkedList();
+        System.out.println(sLL.head.value);
     }
 }

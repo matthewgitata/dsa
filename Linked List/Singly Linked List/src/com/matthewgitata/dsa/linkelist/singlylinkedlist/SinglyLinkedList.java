@@ -100,4 +100,42 @@ public class SinglyLinkedList {
             System.out.println("Node not found");
         }
     }
+
+    /**
+     * Deletes a node from a Singly Linked List.
+     *
+     * @param location location of the node to be deleted
+     */
+    public void deletionOfNode(int location) {
+        if (head == null) {
+            System.out.println("SLL not found.");
+        } else if (location == 0) {
+            head = head.next;
+            size--;
+            if (size == 0) {
+                head = null;
+                tail = null;
+            }
+        } else if (location >= size) {
+            Node tempNode = head;
+            for (int i = 0; i < size - 1; i++) {
+                tempNode = tempNode.next;
+                if (tempNode == head) {
+                    tail = head = null;
+                    size--;
+                    return;
+                }
+                tempNode.next = null;
+                tail.next = tempNode;
+                size--;
+            }
+        } else {
+            Node tempNode = head;
+            for (int i = 0; i < location - 1; i++) {
+                tempNode = tempNode.next;
+            }
+            tempNode.next = tempNode.next.next;
+            size--;
+        }
+    }
 }
