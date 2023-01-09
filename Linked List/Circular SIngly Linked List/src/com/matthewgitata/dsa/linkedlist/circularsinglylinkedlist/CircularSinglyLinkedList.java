@@ -29,4 +29,36 @@ public class CircularSinglyLinkedList {
         size = 1;
         return head;
     }
+
+    /**
+     * Inserts a new value to the CSLL
+     *
+     * @param nodeValue node value
+     * @param location  index of the location to insert the new node
+     */
+    public void insertCSLL(int nodeValue, int location) {
+        Node node = new Node();
+        node.value = nodeValue;
+        if (head == null) {
+            createCSLL(nodeValue);
+        } else if (location == 0) {
+            node.next = head;
+            head = node;
+            tail.next = head;
+        } else if (location >= size) {
+            tail.next = node;
+            tail = node;
+            tail.next = head;
+        } else {
+            Node tempNode = head;
+            int index = 0;
+            while (index < location - 1) {
+                tempNode = tempNode.next;
+                index++;
+            }
+            node.next = tempNode.next;
+            tempNode.next = node;
+        }
+        size++;
+    }
 }
