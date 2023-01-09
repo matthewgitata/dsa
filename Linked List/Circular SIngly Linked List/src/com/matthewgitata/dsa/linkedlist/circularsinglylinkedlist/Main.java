@@ -17,5 +17,8 @@ public class Main {
         System.out.println(csll.head.value);
         System.out.println("\nCSS Traversal");
         csll.traverCSLL();
+        System.out.println("Node Search");
+        csll.searchNode(5);
+        csll.searchNode(8);
     }
 }

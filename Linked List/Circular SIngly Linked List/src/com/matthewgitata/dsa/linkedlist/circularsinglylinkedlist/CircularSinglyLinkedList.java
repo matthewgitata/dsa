@@ -81,4 +81,26 @@ public class CircularSinglyLinkedList {
             System.out.println("CSLL does not exist.");
         }
     }
+
+    /**
+     * Finds a node value in a circular singly linked list.
+     *
+     * @param nodeValue the node value to look for
+     */
+    public boolean searchNode(int nodeValue) {
+        if (head != null) {
+            Node tempNode = head;
+            for (int i = 0; i < size; i++) {
+                if (tempNode.value == nodeValue) {
+                    System.out.print("Found node at location: " + i);
+                    System.out.println("");
+                    return true;
+                }
+                tempNode = tempNode.next;
+            }
+        }
+        System.out.print("Node not found.");
+        return false;
+    }
+
 }
