@@ -8,13 +8,14 @@ package com.matthewgitata.dsa.linkedlist.circularsinglylinkedlist;
 public class Main {
     public static void main(String[] args) {
         CircularSinglyLinkedList csll = new CircularSinglyLinkedList();
-        System.out.println("CSLL Creation.");
+        System.out.println("CSLL Creation");
         csll.createCSLL(3);
-        csll.insertCSLL(3, 0);
         csll.insertCSLL(8, 1);
         csll.insertCSLL(5, 2);
         csll.insertCSLL(7, 3);
         csll.insertCSLL(5, 4);
         System.out.println(csll.head.value);
+        System.out.println("\nCSS Traversal");
+        csll.traverCSLL();
     }
 }
