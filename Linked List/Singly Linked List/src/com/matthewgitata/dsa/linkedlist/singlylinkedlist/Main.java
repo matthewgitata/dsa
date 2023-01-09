@@ -1,4 +1,4 @@
-package com.matthewgitata.dsa.linkelist.singlylinkedlist;
+package com.matthewgitata.dsa.linkedlist.singlylinkedlist;
 
 /**
  * Creates a singly linked list.
