@@ -142,4 +142,19 @@ public class CircularSinglyLinkedList {
             size--;
         }
     }
+
+    /**
+     * Deletes entire Circular Singly Linked
+     * List.
+     */
+    public void deleteCSLL() {
+        if (head == null) {
+            System.out.println("The CSLL does not exist.");
+        } else {
+            head = null;
+            tail.next = null;
+            tail = null;
+            System.out.println("The CSLL has been deleted.");
+        }
+    }
 }

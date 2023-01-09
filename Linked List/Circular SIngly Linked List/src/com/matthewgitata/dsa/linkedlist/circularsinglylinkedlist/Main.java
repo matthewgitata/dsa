@@ -22,5 +22,7 @@ public class Main {
         System.out.println("\nNode Deletion");
         csll.deleteNode(1);
         csll.traverCSLL();
+        csll.deleteCSLL();
+        csll.traverCSLL();
     }
 }
