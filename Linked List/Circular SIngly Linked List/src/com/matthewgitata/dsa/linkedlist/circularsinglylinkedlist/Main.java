@@ -18,7 +18,9 @@ public class Main {
         System.out.println("\nCSS Traversal");
         csll.traverCSLL();
         System.out.println("Node Search");
-        csll.searchNode(5);
         csll.searchNode(8);
+        System.out.println("\nNode Deletion");
+        csll.deleteNode(1);
+        csll.traverCSLL();
     }
 }
