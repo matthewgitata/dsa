@@ -9,7 +9,13 @@ public class Main {
     public static void main(String[] args) {
         // Create DLL
         DoublyLinkedList dll = new DoublyLinkedList();
-        dll.createDLL(1);
-        System.out.println(dll.head.value);
+        dll.createDLL(5);
+        dll.insertDLL(1,1);
+        dll.insertDLL(13, 0);
+        dll.insertDLL(20, 2);
+        dll.insertDLL(20, 3);
+        dll.insertDLL(8, 4);
+        dll.insertDLL(23, 6);
+        System.out.println(dll.head.next.value);
     }
 }
