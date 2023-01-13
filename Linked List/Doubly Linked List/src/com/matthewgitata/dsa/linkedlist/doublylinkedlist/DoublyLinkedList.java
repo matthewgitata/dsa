@@ -84,6 +84,25 @@ public class DoublyLinkedList {
         } else {
             System.out.println("The DLL does not exist.");
         }
-        System.out.println("");
+        System.out.println("\n");
+    }
+
+    /**
+     * Traverses a doubly linked list in reverse.
+     */
+    public void reverseTraverseDLL() {
+        if (head != null) {
+            DoublyNode tempNode = tail;
+            for (int i = 0; i < size; i++) {
+                System.out.print(tempNode.value);
+                if (i != size - 1) {
+                    System.out.print("<-");
+                }
+                tempNode = tempNode.prev;
+            }
+        } else {
+            System.out.println("DLL does not exist.");
+        }
+        System.out.println("\n");
     }
 }

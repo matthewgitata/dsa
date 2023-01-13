@@ -18,5 +18,7 @@ public class Main {
         dll.insertDLL(23, 6);
         System.out.println("Traverse the DLL");
         dll.traverseDLL();
+        System.out.println("Reverse traverse the DLL");
+        dll.reverseTraverseDLL();
     }
 }
