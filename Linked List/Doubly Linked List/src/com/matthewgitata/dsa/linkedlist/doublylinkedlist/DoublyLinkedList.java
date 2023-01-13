@@ -105,4 +105,24 @@ public class DoublyLinkedList {
         }
         System.out.println("\n");
     }
+
+    /**
+     * Searches for a given value in a doubly linked list
+     * @param nodeValue the node value we are looking for
+     * @return true if {@code nodeValue} exists, false if otherwise
+     */
+    public boolean searchDLL(int nodeValue) {
+        if (head != null) {
+            DoublyNode tempNode = head;
+            for (int i = 0; i < size; i++) {
+                if (tempNode.value == nodeValue) {
+                    System.out.println("The node is found at location: " + i);
+                    return true;
+                }
+                tempNode = tempNode.next;
+            }
+        }
+        System.out.println("Node not found.");
+        return false;
+    }
 }

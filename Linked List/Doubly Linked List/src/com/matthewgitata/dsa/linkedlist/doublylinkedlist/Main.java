@@ -9,8 +9,8 @@ public class Main {
     public static void main(String[] args) {
         // Create DLL
         DoublyLinkedList dll = new DoublyLinkedList();
-        dll.createDLL(5);
-        dll.insertDLL(1,1);
+        dll.createDLL(1);
+        dll.insertDLL(1,5);
         dll.insertDLL(13, 0);
         dll.insertDLL(20, 2);
         dll.insertDLL(20, 3);
@@ -20,5 +20,8 @@ public class Main {
         dll.traverseDLL();
         System.out.println("Reverse traverse the DLL");
         dll.reverseTraverseDLL();
+        System.out.println("Search for node in DLL");
+        dll.searchDLL(1);
+        dll.searchDLL(28);
     }
 }
