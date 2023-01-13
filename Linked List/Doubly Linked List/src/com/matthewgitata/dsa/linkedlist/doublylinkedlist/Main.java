@@ -16,6 +16,7 @@ public class Main {
         dll.insertDLL(20, 3);
         dll.insertDLL(8, 4);
         dll.insertDLL(23, 6);
-        System.out.println(dll.head.next.value);
+        System.out.println("Traverse the DLL");
+        dll.traverseDLL();
     }
 }
