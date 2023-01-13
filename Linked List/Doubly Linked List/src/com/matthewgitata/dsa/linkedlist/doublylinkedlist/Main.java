@@ -21,11 +21,13 @@ public class Main {
         System.out.println("Reverse traverse the DLL");
         dll.reverseTraverseDLL();
         System.out.println("\nSearch for node in DLL");
-        dll.searchDLL(1);
         dll.searchDLL(28);
         System.out.println("\nDeletion for node in DLL");
         dll.traverseDLL();
         dll.deleteNodeDLL(3);
+        dll.traverseDLL();
+        System.out.println("\nDLL deletion.");
+        dll.deleteDLL();
         dll.traverseDLL();
     }
 }
