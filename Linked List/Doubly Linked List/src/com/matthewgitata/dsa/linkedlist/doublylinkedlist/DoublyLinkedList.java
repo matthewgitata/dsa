@@ -108,6 +108,7 @@ public class DoublyLinkedList {
 
     /**
      * Searches for a given value in a doubly linked list
+     *
      * @param nodeValue the node value we are looking for
      * @return true if {@code nodeValue} exists, false if otherwise
      */
@@ -124,5 +125,44 @@ public class DoublyLinkedList {
         }
         System.out.println("Node not found.");
         return false;
+    }
+
+    /**
+     * Deletes a node is doubly linked list.
+     *
+     * @param location the location of the value to be deleted
+     */
+    public void deleteNodeDLL(int location) {
+        if (head == null) {
+            System.out.println("DLL does not exist.");
+        } else if (location == 0) {
+            if (size == 1) {
+                head = null;
+                tail = null;
+            } else {
+                head = head.next;
+                head.prev = null;
+            }
+            size--;
+        } else if (location >= size) {
+            DoublyNode tempNode = tail.prev;
+            if (size == 1) {
+                head = null;
+                tail = null;
+            } else {
+                tempNode.next = null;
+                tail = tempNode;
+            }
+            size--;
+
+        } else {
+            DoublyNode tempNode = head;
+            for (int i = 0; i < location - 1; i++) {
+                tempNode = tempNode.next;
+            }
+            tempNode.next = tempNode.next.next;
+            tempNode.next.prev = tempNode;
+            size--;
+        }
     }
 }
