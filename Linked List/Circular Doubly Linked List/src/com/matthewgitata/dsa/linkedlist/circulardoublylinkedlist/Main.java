@@ -25,5 +25,8 @@ public class Main {
         cdll.traverseCDLL();
         cdll.deleteNode(1);
         cdll.traverseCDLL();
+        System.out.println("Delete entire CDLL.");
+        cdll.deleteCDLL();
+        cdll.traverseCDLL();
     }
 }
