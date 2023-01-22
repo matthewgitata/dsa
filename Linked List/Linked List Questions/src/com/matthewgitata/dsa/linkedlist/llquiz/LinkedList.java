@@ -14,6 +14,7 @@ public class LinkedList {
 
     /**
      * Creates Linked List
+     *
      * @param nodeValue the value of the node.
      */
     public void createLL(int nodeValue) {
@@ -27,9 +28,14 @@ public class LinkedList {
 
     /**
      * Inserts a node into the LL.
+     *
      * @param nodeValue the value of the node.
      */
     public void insertNode(int nodeValue) {
+        if (head == null) {
+            createLL(nodeValue);
+            return;
+        }
         Node newNode = new Node();
         newNode.value = nodeValue;
         newNode.next = null;
