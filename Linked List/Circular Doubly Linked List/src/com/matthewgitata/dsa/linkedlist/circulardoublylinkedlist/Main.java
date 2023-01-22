@@ -12,6 +12,10 @@ public class Main {
         CircularDoublyLinkedList cdll = new CircularDoublyLinkedList();
         cdll.createCDLL(3);
         cdll.insertNode(8, 1);
-        System.out.print(cdll.head.next.value);
+        cdll.insertNode(5, 2);
+        cdll.insertNode(7, 3);
+        cdll.insertNode(5, 4);
+        // Traverse CDLL
+        cdll.traverseCDLL();
     }
 }
