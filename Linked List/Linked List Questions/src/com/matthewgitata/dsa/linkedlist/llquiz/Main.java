@@ -9,15 +9,19 @@ package com.matthewgitata.dsa.linkedlist.llquiz;
 public class Main {
     public static void main(String[] args) {
         LinkedList llA = new LinkedList();
-        llA.insertNode(7);
+        llA.insertNode(3);
         llA.insertNode(1);
-        llA.insertNode(6);
+        llA.insertNode(5);
+        llA.insertNode(9);
         LinkedList llB = new LinkedList();
-        llB.insertNode(5);
-        llB.insertNode(9);
         llB.insertNode(2);
+        llB.insertNode(4);
+        llB.insertNode(6);
         Questions qz = new Questions();
-        LinkedList result = qz.sumList(llA, llB);
-        result.traversalLL();
+        qz.addSameNode(llA, llB, 7);
+        qz.addSameNode(llA, llB, 2);
+        qz.addSameNode(llA, llB, 1);
+        Node inter = qz.findIntersection(llA, llB);
+        System.out.println(inter.value);
     }
 }
