@@ -19,5 +19,7 @@ public class Main {
         cdll.traverseCDLL();
         System.out.println("Reverse traverse CDLL.");
         cdll.reverseTraverseCDLL();
+        cdll.searchNode(5);
+        cdll.searchNode(3);
     }
 }
