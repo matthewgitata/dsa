@@ -15,7 +15,9 @@ public class Main {
         cdll.insertNode(5, 2);
         cdll.insertNode(7, 3);
         cdll.insertNode(5, 4);
-        // Traverse CDLL
+        System.out.println("Traverse CDLL.");
         cdll.traverseCDLL();
+        System.out.println("Reverse traverse CDLL.");
+        cdll.reverseTraverseCDLL();
     }
 }
