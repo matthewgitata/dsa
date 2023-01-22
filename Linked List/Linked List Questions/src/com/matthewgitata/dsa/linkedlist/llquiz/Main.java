@@ -16,7 +16,7 @@ public class Main {
         ll.insertNode(5);
         ll.traversalLL();
         Questions q = new Questions();
-        q.deleteDups(ll);
-        ll.traversalLL();
+        Node n = q.nthToLast(ll, 2);
+        System.out.println(n.value);
     }
 }
