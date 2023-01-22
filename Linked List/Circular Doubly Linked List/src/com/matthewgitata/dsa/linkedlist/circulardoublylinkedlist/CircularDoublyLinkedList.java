@@ -128,4 +128,45 @@ public class CircularDoublyLinkedList {
         System.out.println("Node not found");
         return false;
     }
+
+    /**
+     * Deletes a node from a CDLL.
+     */
+    void deleteNode(int location) {
+        if (head == null) {
+            System.out.println("The CDLL does not exist.");
+        } else if (location == 0) {
+            if (size == 1) {
+                head.next = null;
+                head.prev = null;
+                head = null;
+                tail = null;
+            } else {
+                head = head.next;
+                head.prev = tail;
+                tail.next = head;
+            }
+            size--;
+        } else if (location >= size) {
+            if (size == 1) {
+                head.next = null;
+                head.prev = null;
+                head = null;
+                tail = null;
+            } else {
+                tail = tail.prev;
+                tail.next = head;
+                head.prev = tail;
+            }
+            size--;
+        } else {
+            DoublyNode tempNode = head;
+            for (int i = 0; i < location - 1; i++) {
+                tempNode = tempNode.next;
+            }
+            tempNode.next = tempNode.next.next;
+            tempNode.next.prev = tempNode;
+            size--;
+        }
+    }
 }

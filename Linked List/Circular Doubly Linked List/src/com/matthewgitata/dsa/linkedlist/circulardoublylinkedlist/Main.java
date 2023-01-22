@@ -21,5 +21,9 @@ public class Main {
         cdll.reverseTraverseCDLL();
         cdll.searchNode(5);
         cdll.searchNode(3);
+        System.out.println("Delete a node in CDLL.");
+        cdll.traverseCDLL();
+        cdll.deleteNode(1);
+        cdll.traverseCDLL();
     }
 }
