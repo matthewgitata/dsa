@@ -39,10 +39,62 @@ public class Stack {
      * @return true if stack is full, otherwise false
      */
     public boolean isFull() {
-        if (topOfStack == arr.length) {
+        if (topOfStack == arr.length - 1) {
             return true;
         } else {
             return false;
         }
     }
+
+    /**
+     * Pushes element to the Stack.
+     *
+     * @param value value to push
+     */
+    public void push(int value) {
+        if (isFull()) {
+            System.out.println("The Stack is full!");
+        } else {
+            arr[topOfStack + 1] = value;
+            topOfStack++;
+            System.out.println("The value is successfully inserted.");
+        }
+    }
+
+    /**
+     * Pops element out of the Stack
+     *
+     * @return popped element
+     */
+    public int pop() {
+        if (isEmpty()) {
+            System.out.println("The Stack is empty!");
+            return -1;
+        } else {
+            int topStack = arr[topOfStack];
+            topOfStack--;
+            return topStack;
+        }
+    }
+
+    /**
+     * Peeks the element at the top of the Stack.
+     */
+    public int peek() {
+        if (isEmpty()) {
+            System.out.println("Stack is empty!");
+            return -1;
+        } else {
+            return arr[topOfStack];
+        }
+    }
+
+    /**
+     * Deletes the Stack.
+     */
+    public void delete() {
+        arr = null;
+        System.out.println("The Stack is successfully deleted.");
+    }
+
 }
