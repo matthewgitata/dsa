@@ -52,6 +52,7 @@ public class QueueArray {
 
     /**
      * Inserts elements to the Queue.
+     *
      * @param value element to be inserted.
      */
     public void enQueue(int value) {
@@ -69,5 +70,46 @@ public class QueueArray {
                 System.out.println("Successfully inserted " + value + "in the Queue.");
             }
         }
+    }
+
+    /**
+     * Removes the first element in the queue.
+     *
+     * @return the first element in the queue.
+     */
+    public int deQueue() {
+        if (isEmpty()) {
+            System.out.println("The Queue is Empty");
+            return -1;
+        } else {
+            int result = arr[beginningOfQueue];
+            beginningOfQueue++;
+            if (beginningOfQueue > topOfQueue) {
+                beginningOfQueue = -1;
+                topOfQueue = -1;
+            }
+            return result;
+        }
+    }
+
+    /**
+     * Returns the first element in the queue.
+     * @return the first element in the queue.
+     */
+    public int peek() {
+        if (!isEmpty()) {
+            return arr[beginningOfQueue];
+        } else {
+            System.out.println("The Queue is Empty!");
+            return -1;
+        }
+    }
+
+    /**
+     * Deletes the Queue from memory.
+     */
+    public void delete() {
+        this.arr = null;
+        System.out.println("Queue is successfully deleted!");
     }
 }
