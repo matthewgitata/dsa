@@ -14,6 +14,6 @@ public class Main {
         newStack.push(3);
         newStack.push(4);
         newStack.push(5);
-        System.out.println(newStack.pop());
+        System.out.println(newStack.popAt(0));
     }
 }

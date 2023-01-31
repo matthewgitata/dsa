@@ -59,4 +59,17 @@ public class Stack {
         size--;
         return result;
     }
+
+    /**
+     * Pop at function.
+     */
+    public int removeButton() {
+        StackNode b = bottom;
+        bottom = bottom.above;
+        if (bottom != null) {
+            bottom.below = null;
+        }
+        size--;
+        return b.value;
+    }
 }

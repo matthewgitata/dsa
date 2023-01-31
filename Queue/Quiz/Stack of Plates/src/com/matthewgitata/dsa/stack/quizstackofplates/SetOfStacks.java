@@ -52,4 +52,28 @@ public class SetOfStacks {
         }
         return result;
     }
+
+    /**
+     * Shift elements one step left.
+     */
+    public int leftShift(int index, boolean removeTop) {
+        Stack stack = stacks.get(index);
+        int removedItem;
+        if (removeTop) removedItem = stack.pop();
+        else removedItem = stack.removeButton();
+        if (stack.size == 0) {
+            stacks.remove(index);
+        } else if (stacks.size() > index + 1) {
+            int v = leftShift(index + 1, false);
+            stack.push(v);
+        }
+        return removedItem;
+    }
+
+    /**
+     * Pop at method
+     */
+    public int popAt(int index) {
+        return leftShift(index, true);
+    }
 }
