@@ -24,5 +24,10 @@ public class Main {
         newQueue.enQueue(5);
         newQueue.enQueue(5);
         newQueue.enQueue(5);
+        int result = newQueue.deQueue();
+        System.out.println(result);
+        int peeked = newQueue.peek();
+        System.out.println(peeked);
+        newQueue.delete();
     }
 }

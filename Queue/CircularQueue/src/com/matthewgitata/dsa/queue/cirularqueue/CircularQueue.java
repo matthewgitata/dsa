@@ -80,4 +80,49 @@ public class CircularQueue {
             }
         }
     }
+
+    /**
+     * Returns and removes the first element from the Queue.
+     *
+     * @return the first element being removed from the Queue.
+     */
+    public int deQueue() {
+        if (isEmpty()) {
+            System.out.println("The Circular Queue is Empty!");
+            return -1;
+        } else {
+            int result = arr[beginningOfQueue];
+            arr[beginningOfQueue] = 0;
+            if (beginningOfQueue == topOfQueue) {
+                beginningOfQueue = topOfQueue = -1;
+            } else if (beginningOfQueue + 1 == size) {
+                beginningOfQueue = 0;
+            } else {
+                beginningOfQueue++;
+            }
+            return result;
+        }
+    }
+
+    /**
+     * Peeks the first element from the Queue.
+     *
+     * @return the first element from the Queue.
+     */
+    public int peek() {
+        if (isEmpty()) {
+            System.out.println("The Queue is Empty!");
+            return -1;
+        } else {
+            return arr[beginningOfQueue];
+        }
+    }
+
+    /**
+     * Deletes the Queue.
+     */
+    public void delete() {
+        arr = null;
+        System.out.println("Queue successfully deleted!");
+    }
 }
