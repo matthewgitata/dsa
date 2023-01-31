@@ -41,4 +41,41 @@ public class QueueLinkedList {
         System.out.println("Successfully inserted " + value + " in the Queue.");
     }
 
+    /**
+     * Returns and removes the first element in the Queue.
+     *
+     * @return the removed first element.
+     */
+    public int deQueue() {
+        int value = -1;
+        if (isEmpty()) {
+            return value;
+        } else {
+            value = list.head.value;
+            list.deletionOfNode(0);
+            return value;
+        }
+    }
+
+    /**
+     * Returns the first element in the Queue.
+     *
+     * @return the value of the first element in the Queue.
+     */
+    public int peek() {
+        if (isEmpty()) {
+            System.out.println("The Queue is Empty!");
+            return -1;
+        } else {
+            return list.head.value;
+        }
+    }
+
+    /**
+     * Deletes the Queue.
+     */
+    public void deleteQueue() {
+        list.deleteSLL();
+        System.out.println("The Queue is successfully deleted.");
+    }
 }

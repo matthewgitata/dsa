@@ -20,5 +20,14 @@ class Main {
         System.out.println("Is Queue empty?");
         boolean isEmpty2 = newQLL.isEmpty();
         System.out.println(isEmpty2);
+        System.out.println("EnQueueing");
+        int deQueued = newQLL.deQueue();
+        System.out.println(deQueued);
+        System.out.println("Peeking");
+        int peeked = newQLL.peek();
+        System.out.println(peeked);
+        System.out.println("Deleting Queue.");
+        newQLL.deleteQueue();
+        System.out.println(newQLL.peek());
     }
 }
