@@ -1,7 +1,7 @@
 package com.matthewgitata.dsa.tree.binarytree;
 
 /**
- * THe {@code BinaryTreeLL} class defines the properties of a BinaryTreeLL
+ * The {@code BinaryTreeLL} class defines the properties of a BinaryTreeLL
  * and the accompanying operations including create, insert, delete,
  * search, traverse, and deleteTree.
  * <p>
@@ -15,5 +15,19 @@ public class BinaryTreeLL {
      */
     public BinaryTreeLL() {
         this.root = null;
+    }
+
+    /**
+     * PreOrder Traversal.
+     *
+     * @param node the root node
+     */
+    void preOrder(BinaryNode node) {
+        if (node == null) {
+            return;
+        }
+        System.out.print(node.value + " ");
+        preOrder(node.left);
+        preOrder(node.right);
     }
 }
