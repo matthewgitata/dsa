@@ -133,4 +133,16 @@ public class BinaryTree {
             System.out.println("The node successfully deleted.");
         }
     }
+
+    /**
+     * Delete Binary Tree
+     */
+    public void deleteBT() {
+        try {
+            arr = null;
+            System.out.println("The BinaryTree has been successfully deleted.");
+        } catch (Exception e) {
+            System.out.println("There was an error deleting the BinaryTree");
+        }
+    }
 }

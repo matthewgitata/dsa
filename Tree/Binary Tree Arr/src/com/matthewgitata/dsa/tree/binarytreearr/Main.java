@@ -34,6 +34,7 @@ public class Main {
         System.out.println("Node deletion");
         newBinaryTree.delete("A8");
         newBinaryTree.levelOrder();
-
+        System.out.println("Binary Tree deletion");
+        newBinaryTree.deleteBT();
     }
 }
