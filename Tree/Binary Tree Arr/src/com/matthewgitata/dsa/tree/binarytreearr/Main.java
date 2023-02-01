@@ -9,7 +9,7 @@ package com.matthewgitata.dsa.tree.binarytreearr;
 public class Main {
     public static void main(String[] args) {
         System.out.println("BT Creation");
-        BinaryTree newBinaryTree = new BinaryTree(5);
+        BinaryTree newBinaryTree = new BinaryTree(9);
         System.out.println("BT Insertion");
         newBinaryTree.insert("A1");
         newBinaryTree.insert("A2");
@@ -17,9 +17,14 @@ public class Main {
         newBinaryTree.insert("A4");
         newBinaryTree.insert("A5");
         newBinaryTree.insert("A6");
+        newBinaryTree.insert("A7");
+        newBinaryTree.insert("A8");
+        newBinaryTree.insert("A9");
         System.out.println("\nPreOrder Traversal.");
         newBinaryTree.preOrder(1);
         System.out.println("\nInOrder Traversal.");
         newBinaryTree.inOrder(1);
+        System.out.println("\nPostOrder Traversal.");
+        newBinaryTree.postOrder(1);
     }
 }

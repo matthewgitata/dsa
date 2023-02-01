@@ -78,4 +78,18 @@ public class BinaryTree {
         inOrder(index * 2 + 1);
     }
 
+    /**
+     * PostOrder Traversal
+     *
+     * @param index the root node index
+     */
+    public void postOrder(int index) {
+        if (index > lastUsedIndex) {
+            return;
+        }
+        postOrder(index * 2);
+        postOrder(index * 2 + 1);
+        System.out.print(arr[index] + " ");
+    }
+
 }
