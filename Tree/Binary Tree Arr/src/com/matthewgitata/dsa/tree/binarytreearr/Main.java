@@ -31,5 +31,9 @@ public class Main {
         System.out.println("\nBT search.");
         newBinaryTree.search("A1");
         newBinaryTree.search("A17");
+        System.out.println("Node deletion");
+        newBinaryTree.delete("A8");
+        newBinaryTree.levelOrder();
+
     }
 }

@@ -96,7 +96,7 @@ public class BinaryTree {
      * LevelOrder Traversal.
      */
     public void levelOrder() {
-        for (int i = 1; i < lastUsedIndex; i++) {
+        for (int i = 1; i <= lastUsedIndex; i++) {
             System.out.print(arr[i] + " ");
         }
     }
@@ -116,5 +116,21 @@ public class BinaryTree {
         }
         System.out.println(value + " does not exist in the Binary Tree.");
         return -1;
+    }
+
+    /**
+     * Delete a node from BT
+     *
+     * @param value the node value to delete
+     */
+    public void delete(String value) {
+        int location = search(value);
+        if (location == -1) {
+            return;
+        } else {
+            arr[location] = arr[lastUsedIndex];
+            lastUsedIndex--;
+            System.out.println("The node successfully deleted.");
+        }
     }
 }
