@@ -17,5 +17,7 @@ public class Main {
         newBinaryTree.insert("A4");
         newBinaryTree.insert("A5");
         newBinaryTree.insert("A6");
+        System.out.println("\nPreOrder Traversal.");
+        newBinaryTree.preOrder(1);
     }
 }

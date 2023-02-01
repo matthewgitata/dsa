@@ -49,4 +49,19 @@ public class BinaryTree {
             System.out.println("The Binary Tree is Full!");
         }
     }
+
+    /**
+     * PreOrder Traversal.
+     *
+     * @param index the root node index.
+     */
+    public void preOrder(int index) {
+        if (index > lastUsedIndex) {
+            return;
+        }
+        System.out.print(arr[index] + " ");
+        preOrder(index * 2);
+        preOrder(index * 2 + 1);
+    }
+
 }
