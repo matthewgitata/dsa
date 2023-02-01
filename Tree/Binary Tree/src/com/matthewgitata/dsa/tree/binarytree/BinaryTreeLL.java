@@ -1,5 +1,8 @@
 package com.matthewgitata.dsa.tree.binarytree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * The {@code BinaryTreeLL} class defines the properties of a BinaryTreeLL
  * and the accompanying operations including create, insert, delete,
@@ -57,5 +60,24 @@ public class BinaryTreeLL {
         postOrder(node.left);
         postOrder(node.right);
         System.out.print(node.value + " ");
+    }
+
+    /**
+     * LevelOrder Traversal.
+     */
+    public void levelOrder() {
+        Queue<BinaryNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            BinaryNode presentNode = queue.remove();
+            System.out.print(presentNode.value + " ");
+            if (presentNode.left != null) {
+                queue.add(presentNode.left);
+            }
+            if (presentNode.right != null) {
+                queue.add(presentNode.right);
+            }
+        }
+
     }
 }
