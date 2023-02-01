@@ -26,5 +26,7 @@ public class Main {
         newBinaryTree.inOrder(1);
         System.out.println("\nPostOrder Traversal.");
         newBinaryTree.postOrder(1);
+        System.out.println("\nLevelOrder Traversal.");
+        newBinaryTree.levelOrder();
     }
 }
