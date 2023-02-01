@@ -105,4 +105,36 @@ public class BinaryTreeLL {
         }
         System.out.println("The value " + value + " is not found in Tree");
     }
+
+    /**
+     * Inserts a node to the BinaryTree.
+     *
+     * @param value the value to be inserted.
+     */
+    void insert(String value) {
+        BinaryNode newNode = new BinaryNode();
+        newNode.value = value;
+        if (root == null) {
+            root = newNode;
+            System.out.println("Successfully inserted new node at Root.");
+        } else {
+            Queue<BinaryNode> queue = new LinkedList<>();
+            queue.add(root);
+            while (!queue.isEmpty()) {
+                BinaryNode presentNode = queue.remove();
+                if (presentNode.left == null) {
+                    presentNode.left = newNode;
+                    System.out.println("Successfully inserted");
+                    break;
+                } else if (presentNode.right == null) {
+                    presentNode.right = newNode;
+                    System.out.println("Successfully inserted");
+                    break;
+                } else {
+                    queue.add(presentNode.left);
+                    queue.add(presentNode.right);
+                }
+            }
+        }
+    }
 }

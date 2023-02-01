@@ -48,5 +48,18 @@ public class Main {
         binaryTree.levelOrder();
         System.out.println("\nNode search");
         binaryTree.search("N5");
+
+
+        //Insertion method
+        System.out.println("Insertion method.");
+        BinaryTreeLL binaryTree2 = new BinaryTreeLL();
+        System.out.println("\nInsertion");
+        binaryTree2.insert("Z1");
+        binaryTree2.insert("Z2");
+        binaryTree2.insert("Z3");
+        binaryTree2.insert("Z4");
+        binaryTree2.insert("Z5");
+        binaryTree2.insert("Z6");
+        binaryTree2.levelOrder();
     }
 }
