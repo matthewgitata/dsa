@@ -51,7 +51,7 @@ public class Main {
 
 
         //Insertion method
-        System.out.println("Insertion method.");
+        System.out.println("\n\nTree 2 Insertion method.");
         BinaryTreeLL binaryTree2 = new BinaryTreeLL();
         System.out.println("\nInsertion");
         binaryTree2.insert("Z1");
@@ -60,6 +60,21 @@ public class Main {
         binaryTree2.insert("Z4");
         binaryTree2.insert("Z5");
         binaryTree2.insert("Z6");
+        binaryTree2.levelOrder();
+
+        //Get deepest node
+        System.out.println("\nDeepest node.");
+        System.out.println(binaryTree2.getDeepestNode().value);
+
+        //Delete deepest node
+        System.out.println("\nDelete Deepest node.");
+        binaryTree2.levelOrder();
+        binaryTree2.deleteDeepestNode();
+        System.out.println("");
+        binaryTree2.levelOrder();
+        // Delete a node from BT
+        System.out.println("\nDelete a node from BT.");
+        binaryTree2.deleteNode("Z2");
         binaryTree2.levelOrder();
     }
 }
