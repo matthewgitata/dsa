@@ -64,4 +64,18 @@ public class BinaryTree {
         preOrder(index * 2 + 1);
     }
 
+    /**
+     * InOrder Traversal.
+     *
+     * @param index the root node index
+     */
+    public void inOrder(int index) {
+        if (index > lastUsedIndex) {
+            return;
+        }
+        inOrder(index * 2);
+        System.out.print(arr[index] + " ");
+        inOrder(index * 2 + 1);
+    }
+
 }
