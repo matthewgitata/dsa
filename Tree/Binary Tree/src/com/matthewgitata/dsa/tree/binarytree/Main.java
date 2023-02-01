@@ -76,5 +76,8 @@ public class Main {
         System.out.println("\nDelete a node from BT.");
         binaryTree2.deleteNode("Z2");
         binaryTree2.levelOrder();
+        //Delete Binary Tree
+        System.out.println("Delete Binary Tree");
+        binaryTree2.deleteBT();
     }
 }

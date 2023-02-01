@@ -209,4 +209,12 @@ public class BinaryTreeLL {
         System.out.println("The node does not exist in this Binary Tree!");
     }
 
+    /**
+     * Deletes entire Binary Tree
+     */
+    public void deleteBT() {
+        root = null;
+        System.out.println("The BinaryTree has been deleted.");
+    }
+
 }
