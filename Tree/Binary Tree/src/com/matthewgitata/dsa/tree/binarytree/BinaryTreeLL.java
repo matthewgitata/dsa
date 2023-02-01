@@ -80,4 +80,29 @@ public class BinaryTreeLL {
         }
 
     }
+
+    /**
+     * Searches for a node in a BinaryTree.
+     *
+     * @param value the node's value being searched for.
+     */
+    public void search(String value) {
+        Queue<BinaryNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            BinaryNode presentNode = queue.remove();
+            if (presentNode.value == value) {
+                System.out.println("The value " + value + " is found in Tree.");
+                return;
+            } else {
+                if (presentNode.left != null) {
+                    queue.add(presentNode.left);
+                }
+                if (presentNode.right != null) {
+                    queue.add(presentNode.right);
+                }
+            }
+        }
+        System.out.println("The value " + value + " is not found in Tree");
+    }
 }
