@@ -28,5 +28,8 @@ public class Main {
         newBinaryTree.postOrder(1);
         System.out.println("\nLevelOrder Traversal.");
         newBinaryTree.levelOrder();
+        System.out.println("\nBT search.");
+        newBinaryTree.search("A1");
+        newBinaryTree.search("A17");
     }
 }

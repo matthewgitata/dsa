@@ -100,4 +100,21 @@ public class BinaryTree {
             System.out.print(arr[i] + " ");
         }
     }
+
+    /**
+     * Search for a node in Binary tree.
+     *
+     * @param value the value of node being searched.
+     * @return index of the {@code value}
+     */
+    public int search(String value) {
+        for (int index = 1; index < lastUsedIndex; index++) {
+            if (arr[index] == value) {
+                System.out.println(value + " exists at location: " + index);
+                return index;
+            }
+        }
+        System.out.println(value + " does not exist in the Binary Tree.");
+        return -1;
+    }
 }
