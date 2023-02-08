@@ -27,5 +27,9 @@ public class Main {
 
         System.out.println("\nPostOrder Traversal.");
         newBST.postOrder(newBST.root);
+
+        System.out.println("\nLevelOrder Traversal.");
+        newBST.levelOrder();
+
     }
 }

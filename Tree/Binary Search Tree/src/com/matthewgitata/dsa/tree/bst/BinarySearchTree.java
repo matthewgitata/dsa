@@ -1,5 +1,8 @@
 package com.matthewgitata.dsa.tree.bst;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * The {@code BinarySearchTree} class defines the properties of a
  * BinarySearchTree object as well as the accompanying functions that
@@ -91,4 +94,23 @@ public class BinarySearchTree {
         postOrder(node.right);
         System.out.print(node.value + " ");
     }
+
+    /**
+     * LevelOrder Traversal.
+     */
+    public void levelOrder() {
+        Queue<BinaryNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            BinaryNode presentNode = queue.remove();
+            System.out.print(presentNode.value + " ");
+            if (presentNode.left != null) {
+                queue.add(presentNode.left);
+            }
+            if (presentNode.right != null) {
+                queue.add(presentNode.right);
+            }
+        }
+    }
+
 }
