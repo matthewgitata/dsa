@@ -18,5 +18,8 @@ public class Main {
         newBST.insert(100);
         newBST.insert(20);
         newBST.insert(40);
+
+        System.out.println("\nPreOrder Traversal.");
+        newBST.preOrder(newBST.root);
     }
 }

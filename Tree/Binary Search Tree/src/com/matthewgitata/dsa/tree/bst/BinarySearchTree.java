@@ -1,8 +1,5 @@
 package com.matthewgitata.dsa.tree.bst;
 
-import java.util.LinkedList;
-import java.util.Queue;
-
 /**
  * The {@code BinarySearchTree} class defines the properties of a
  * BinarySearchTree object as well as the accompanying functions that
@@ -25,7 +22,7 @@ public class BinarySearchTree {
      * Inserts a node to the BST.
      *
      * @param currentNode the current node.
-     * @param value     node value to be inserted.
+     * @param value       node value to be inserted.
      * @return the root node.
      */
     private BinaryNode insert(BinaryNode currentNode, int value) {
@@ -46,9 +43,24 @@ public class BinarySearchTree {
 
     /**
      * Insert root node.
+     *
      * @param value value of node to be inserted.
      */
     void insert(int value) {
-        insert(this.root, value);
+        root = insert(this.root, value);
+    }
+
+    /**
+     * PreOrder Traversal.
+     *
+     * @param node the root node.
+     */
+    public void preOrder(BinaryNode node) {
+        if (node == null) {
+            return;
+        }
+        System.out.print(node.value + " ");
+        preOrder(node.left);
+        preOrder(node.right);
     }
 }
