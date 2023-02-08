@@ -34,5 +34,11 @@ public class Main {
         System.out.println("\nSearch for Node.");
         newBST.search(newBST.root, 100);
         newBST.search(newBST.root, 200);
+
+        System.out.println("\nDelete a Node.");
+        newBST.levelOrder();
+        System.out.println();
+        newBST.deleteNode(newBST.root, 40);
+        newBST.levelOrder();
     }
 }

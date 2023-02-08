@@ -133,4 +133,52 @@ public class BinarySearchTree {
             return search(node.right, value);
         }
     }
+
+    /**
+     * Find minimum node.
+     *
+     * @param root the root node.
+     * @return the minimum node.
+     */
+    public BinaryNode minimumNode(BinaryNode root) {
+        if (root.left == null) {
+            return root;
+        } else {
+            return minimumNode(root.left);
+        }
+    }
+
+    /**
+     * Deletes a node in BST.
+     *
+     * @param root  the root node.
+     * @param value the node value to be deleted.
+     * @return the binary node being deleted from the BST.
+     */
+    BinaryNode deleteNode(BinaryNode root, int value) {
+        if (root == null) {
+            System.out.println("Value is not found in BST!");
+            return null;
+        }
+        if (value < root.value) {
+            root.left = deleteNode(root.left, value);
+        } else if (value > root.value) {
+            root.right = deleteNode(root.right, value);
+        } else {
+            if (root.right != null && root.left != null) {
+                BinaryNode temp = root;
+                BinaryNode minNodeForRight = minimumNode(temp.right);
+                root.value = minNodeForRight.value;
+                root.right = deleteNode(root.right, minNodeForRight.value);
+            } else if (root.right != null) {
+                root = root.right;
+            }
+            if (root.left != null) {
+                root = root.left;
+            } else {
+                root = null;
+            }
+        }
+        return root;
+    }
 }
