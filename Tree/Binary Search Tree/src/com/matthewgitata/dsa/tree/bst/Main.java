@@ -24,5 +24,8 @@ public class Main {
 
         System.out.println("\nInOrder Traversal.");
         newBST.inOrder(newBST.root);
+
+        System.out.println("\nPostOrder Traversal.");
+        newBST.postOrder(newBST.root);
     }
 }
