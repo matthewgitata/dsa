@@ -181,4 +181,12 @@ public class BinarySearchTree {
         }
         return root;
     }
+
+    /**
+     * Deletes BST.
+     */
+    public void deleteBST() {
+        root = null;
+        System.out.println("BST has been deleted successfully.");
+    }
 }

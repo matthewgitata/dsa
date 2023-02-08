@@ -40,5 +40,8 @@ public class Main {
         System.out.println();
         newBST.deleteNode(newBST.root, 40);
         newBST.levelOrder();
+
+        System.out.println("Delete BST");
+        newBST.deleteBST();
     }
 }
