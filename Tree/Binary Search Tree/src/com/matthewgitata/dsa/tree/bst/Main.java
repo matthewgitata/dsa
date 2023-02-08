@@ -31,5 +31,8 @@ public class Main {
         System.out.println("\nLevelOrder Traversal.");
         newBST.levelOrder();
 
+        System.out.println("\nSearch for Node.");
+        newBST.search(newBST.root, 100);
+        newBST.search(newBST.root, 200);
     }
 }

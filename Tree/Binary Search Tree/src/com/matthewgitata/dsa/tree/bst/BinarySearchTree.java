@@ -113,4 +113,24 @@ public class BinarySearchTree {
         }
     }
 
+    /**
+     * Search for a node.
+     *
+     * @param node  the root node
+     * @param value the value to be search for.
+     * @return the found node.
+     */
+    public BinaryNode search(BinaryNode node, int value) {
+        if (node == null) {
+            System.out.println("Value " + value + " not found in BST.");
+            return null;
+        } else if (root.value == value) {
+            System.out.println("Value " + value + " found in BST.");
+            return node;
+        } else if (value < node.value) {
+            return search(node.left, value);
+        } else {
+            return search(node.right, value);
+        }
+    }
 }
