@@ -194,7 +194,89 @@ public class AVL {
         return node;
     }
 
+    /**
+     * Insert root  node
+     *
+     * @param value the node's int value
+     */
     public void insert(int value) {
         this.root = insertNode(root, value);
+    }
+
+    /**
+     * Find minimum node.
+     *
+     * @param root the root node.
+     */
+    public BinaryNode minimumNode(BinaryNode root) {
+        if (root.left == null) {
+            return root;
+        }
+        return minimumNode(root.left);
+    }
+
+    /**
+     * Delete a node in AVL
+     *
+     * @param node  the root node
+     * @param value the node value to be deleted
+     * @return the deleted node
+     */
+    public BinaryNode deleteNode(BinaryNode node, int value) {
+        if (node == null) {
+            System.out.println("Value " + value + " not found in AVL Tree!");
+            return null;
+        }
+        if (value < node.value) {
+            node.left = deleteNode(node.left, value);
+        } else if (value > node.value) {
+            node.right = deleteNode(node.right, value);
+        } else {
+            if (node.left != null && node.right != null) {
+                BinaryNode temp = node;
+                BinaryNode minNodeForRight = minimumNode(temp.right);
+                node.value = minNodeForRight.value;
+                node.right = deleteNode(node.right, minNodeForRight.value);
+            } else if (node.left != null) {
+                node = node.left;
+            } else if (node.right != null) {
+                node = node.right;
+            } else {
+                node = null;
+            }
+        }
+
+        int balance = getBalance(node);
+        if (balance > 1 && getBalance(node.left) >= 0) {
+            return rotateRight(node);
+        }
+        if (balance > 1 && getBalance(node.left) < 0) {
+            node.left = rotateLeft(node.left);
+            return rotateRight(node);
+        }
+        if (balance < -1 && getBalance(node.right) <= 0) {
+            return rotateLeft(node);
+        }
+        if (balance < -1 && getBalance(node.right) < 0) {
+            node.right = rotateRight(node.right);
+            return rotateLeft(node);
+        }
+        return node;
+    }
+
+    /**
+     * Delete root node
+     * @param value the node value
+     */
+    public void delete(int value) {
+        this.root = deleteNode(root, value);
+    }
+
+    /**
+     * Delete entire AVL Tree
+     */
+    public void deleteAVL() {
+        root = null;
+        System.out.println("AVL has been successfully deleted!");
     }
 }

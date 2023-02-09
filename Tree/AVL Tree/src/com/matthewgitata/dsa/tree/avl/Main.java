@@ -30,5 +30,14 @@ public class Main {
         System.out.println("\nSearch for Node.");
         newAVL.search(newAVL.root, 10);
         newAVL.search(newAVL.root, 60);
+
+        System.out.println("\nDelete AVL Tree.");
+        newAVL.levelOrder();
+        newAVL.delete(5);
+        System.out.println();
+        newAVL.levelOrder();
+
+        System.out.println("\nDelete AVL Tree.");
+        newAVL.deleteAVL();
     }
 }
