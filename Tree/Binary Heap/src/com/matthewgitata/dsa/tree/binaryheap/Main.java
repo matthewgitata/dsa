@@ -22,5 +22,7 @@ public class Main {
         System.out.println("Extract head of Binary Heap");
         newBinaryHeap.extractHeadOfHeap("Min");
         newBinaryHeap.levelOrder();
+        System.out.println("Delete Binary Heap");
+        newBinaryHeap.deleteBH();
     }
 }

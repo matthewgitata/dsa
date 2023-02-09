@@ -183,4 +183,12 @@ public class BinaryHeap {
         }
     }
 
+    /**
+     * Delete entire Binary Heap.
+     */
+    public void deleteBH() {
+        arr = null;
+        System.out.println("Binary Heap Successfully Deleted!");
+    }
+
 }
