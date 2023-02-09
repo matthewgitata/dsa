@@ -10,6 +10,11 @@ public class Main {
     public static void main(String[] args) {
         AVL newAVL = new AVL();
 
+        newAVL.insert(5);
+        newAVL.insert(10);
+        newAVL.insert(15);
+        newAVL.insert(20);
+
         System.out.println("\nPreOrder Traversal.");
         newAVL.preOrder(newAVL.root);
 
@@ -23,7 +28,7 @@ public class Main {
         newAVL.levelOrder();
 
         System.out.println("\nSearch for Node.");
-        newAVL.search(newAVL.root, 100);
-        newAVL.search(newAVL.root, 200);
+        newAVL.search(newAVL.root, 10);
+        newAVL.search(newAVL.root, 60);
     }
 }

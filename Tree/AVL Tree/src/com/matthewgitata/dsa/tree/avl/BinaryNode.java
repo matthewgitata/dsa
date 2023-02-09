@@ -11,4 +11,11 @@ public class BinaryNode {
     public int height;
     public BinaryNode left;
     public BinaryNode right;
+
+    /**
+     * Initialize height of new node to 0.
+     */
+    public BinaryNode() {
+        this.height = 0;
+    }
 }
