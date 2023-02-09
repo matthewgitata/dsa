@@ -19,5 +19,8 @@ public class Main {
         System.out.println(newBinaryHeap.sizeOfBinaryHeap());
         System.out.println("Level Order Traversal");
         newBinaryHeap.levelOrder();
+        System.out.println("Extract head of Binary Heap");
+        newBinaryHeap.extractHeadOfHeap("Min");
+        newBinaryHeap.levelOrder();
     }
 }

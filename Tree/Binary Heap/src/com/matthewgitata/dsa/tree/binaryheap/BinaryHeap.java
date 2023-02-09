@@ -107,4 +107,80 @@ public class BinaryHeap {
         System.out.println("Inserted " + value + " successfully in Heap.");
     }
 
+    /**
+     * Heapify for extract/deletion.
+     *
+     * @param index    the current index
+     * @param heapType the type of heap
+     */
+    public void heapifyTopToBottom(int index, String heapType) {
+        int left = index * 2;
+        int right = index * 2 + 1;
+        int swapChild = 0;
+
+        if (sizeOfTree < left) {
+            return;
+        }
+        if (heapType == "Max") {
+            if (sizeOfTree == left) {
+                if (arr[index] < arr[left]) {
+                    int tmp = arr[index];
+                    arr[index] = arr[left];
+                    arr[left] = tmp;
+                }
+                return;
+            } else {
+                if (arr[left] > arr[right]) {
+                    swapChild = left;
+                } else {
+                    swapChild = right;
+                }
+                if (arr[index] < arr[swapChild]) {
+                    int tmp = arr[index];
+                    arr[index] = arr[swapChild];
+                    arr[swapChild] = tmp;
+                }
+            }
+        } else if (heapType == "Min") {
+            if (sizeOfTree == left) {
+                if (arr[index] > arr[left]) {
+                    int tmp = arr[index];
+                    arr[index] = arr[left];
+                    arr[left] = tmp;
+                }
+                return;
+            } else {
+                if (arr[left] < arr[right]) {
+                    swapChild = left;
+                } else {
+                    swapChild = right;
+                }
+                if (arr[index] > arr[swapChild]) {
+                    int tmp = arr[index];
+                    arr[index] = arr[swapChild];
+                    arr[swapChild] = tmp;
+                }
+            }
+        }
+        heapifyTopToBottom(swapChild, heapType);
+    }
+
+    /**
+     * Extract head of type
+     *
+     * @param heapType the heap type
+     * @return the head of the binary heap
+     */
+    public int extractHeadOfHeap(String heapType) {
+        if (isEmpty()) {
+            return -1;
+        } else {
+            int extractedValue = arr[1];
+            arr[1] = arr[sizeOfTree];
+            sizeOfTree--;
+            heapifyTopToBottom(1, heapType);
+            return extractedValue;
+        }
+    }
+
 }
