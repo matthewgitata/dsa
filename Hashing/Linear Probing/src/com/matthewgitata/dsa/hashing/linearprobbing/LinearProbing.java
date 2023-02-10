@@ -105,4 +105,41 @@ public class LinearProbing {
         }
     }
 
+    /**
+     * Search
+     *
+     * @param word the string to search
+     * @return true if {@code word} exists in HashTable, otherwise false.
+     */
+    public boolean searchHashTable(String word) {
+        int index = modASCIIHashFunction(word, hashtable.length);
+        for (int i = index; i < index + hashtable.length; i++) {
+            int newIndex = i % hashtable.length;
+            if (hashtable[newIndex] != null && hashtable[newIndex].equals(word)) {
+                System.out.println(word + " found at location: " + newIndex);
+                return true;
+            }
+        }
+        System.out.println(word + " not found in HashTable.");
+        return false;
+    }
+
+    /**
+     * Delete
+     *
+     * @param word the word to delete.
+     */
+    public void deleteKeyHashTable(String word) {
+        int index = modASCIIHashFunction(word, hashtable.length);
+        for (int i = index; i < index + hashtable.length; i++) {
+            int newIndex = i % hashtable.length;
+            if (hashtable[newIndex] != null && hashtable[newIndex].equals(word)) {
+                hashtable[newIndex] = null;
+                System.out.println(word + " has been deleted from HashTable.");
+                return;
+            }
+        }
+        System.out.println(word + " not found in HashTable");
+    }
+
 }
