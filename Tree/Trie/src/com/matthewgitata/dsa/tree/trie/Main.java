@@ -16,5 +16,8 @@ public class Main {
         newTrie.search("APP");
         newTrie.search("APIS");
         newTrie.search("API");
+        System.out.println("Trie String Deletion");
+        newTrie.delete("APIS");
+        newTrie.search("APIS");
     }
 }
