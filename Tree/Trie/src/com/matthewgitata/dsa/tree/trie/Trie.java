@@ -36,4 +36,30 @@ public class Trie {
         current.endOfString = true;
         System.out.println("Successfully inserted " + word + " in Trie.");
     }
+
+    /**
+     * Search in Trie.
+     *
+     * @param word String to search for.
+     * @return true if {@code word} exists in Trie, otherwise false.
+     */
+    public boolean search(String word) {
+        TrieNode current = root;
+        for (int i = 0; i < word.length(); i++) {
+            char ch = word.charAt(i);
+            TrieNode node = current.children.get(ch);
+            if (node == null) {
+                System.out.println("Word " + word + " does not exist in Trie");
+                return false;
+            }
+            current = node;
+        }
+        if (current.endOfString == true) {
+            System.out.println("Word " + word + " exists in Trie");
+            return true;
+        } else {
+            System.out.println("Word " + word + " does not exist in Trie. But it's a prefix of another String.");
+        }
+        return current.endOfString;
+    }
 }

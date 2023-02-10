@@ -9,8 +9,12 @@ package com.matthewgitata.dsa.tree.trie;
 public class Main {
     public static void main(String[] args) {
         Trie newTrie = new Trie();
-        newTrie.insert("API");
-        newTrie.insert("APP");
+        System.out.println("Trie Insertion.");
         newTrie.insert("APIS");
+        newTrie.insert("APP");
+        System.out.println("Trie Search");
+        newTrie.search("APP");
+        newTrie.search("APIS");
+        newTrie.search("API");
     }
 }
