@@ -68,4 +68,34 @@ public class DirectChaining {
         }
     }
 
+    /**
+     * Search.
+     *
+     * @param word the word being searched
+     * @return true if {@code word} exists in HashTable, otherwise false.
+     */
+    public boolean searchHashTable(String word) {
+        int newIndex = modASCIIHashFunction(word, hashTable.length);
+        if (hashTable[newIndex] != null && hashTable[newIndex].contains(word)) {
+            System.out.println("\n " + "\"" + word + "\"" + " found in HashTable at location " + newIndex);
+            return true;
+        } else {
+            System.out.println("\n " + "\"" + word + "\"" + " not found in HashTable.");
+            return false;
+        }
+    }
+
+    /**
+     * Delete
+     *
+     * @param word the word/key to delete
+     */
+    public void deleteKeyHashTable(String word) {
+        int newIndex = modASCIIHashFunction(word, hashTable.length);
+        if (searchHashTable(word)) {
+            hashTable[newIndex].remove(word);
+            System.out.println("\n " + "\"" + word + "\"" + " has been deleted from HashTable.");
+        }
+    }
+
 }

@@ -14,7 +14,15 @@ public class Main {
         directChaining.insertHashTable("brown");
         directChaining.insertHashTable("fox");
         directChaining.insertHashTable("over");
-
+        System.out.println("Display HashTable");
+        directChaining.displayHashTable();
+        System.out.println("Search in HashTable");
+        directChaining.searchHashTable("fox");
+        directChaining.searchHashTable("ox");
+        System.out.println("Delete in HashTable");
+        directChaining.deleteKeyHashTable("brown");
+        directChaining.deleteKeyHashTable("ox");
+        System.out.println("Display HashTable");
         directChaining.displayHashTable();
     }
 }
