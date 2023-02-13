@@ -9,6 +9,7 @@ package com.matthewgitata.dsa.graph.adjacencymatrix;
 public class GraphNode {
     public String name;
     public int index;
+    public boolean isVisited = false;
 
     /**
      * Constructor
