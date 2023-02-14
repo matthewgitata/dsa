@@ -32,6 +32,7 @@ public class Main {
 
         System.out.println(newGraph);
 
-        newGraph.dijkstra(nodeList.get(0));
+        System.out.println("Printing BellmanFord from Source: A");
+        newGraph.bellmanFord(nodeList.get(0));
     }
 }
