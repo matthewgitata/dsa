@@ -176,4 +176,37 @@ public class Graph {
             System.out.print(stack.pop().name + " ");
         }
     }
+
+    /**
+     * Print path
+     */
+    void pathPrint(GraphNode node) {
+        if (node.parent != null) {
+            pathPrint(node.parent);
+        }
+        System.out.print(node.name + " ");
+    }
+
+    /**
+     * BFS For SSSPP
+     */
+    void BFSForSSSPP(GraphNode node) {
+        LinkedList<GraphNode> queue = new LinkedList<>();
+        queue.add(node);
+        while (!queue.isEmpty()) {
+            GraphNode currentNode = queue.remove();
+            currentNode.isVisited = true;
+            System.out.print("Printing path for node " + ": ");
+            pathPrint(currentNode);
+            System.out.println();
+            ArrayList<GraphNode> neighbors = getNeighbors(currentNode);
+            for (GraphNode neighbor : neighbors) {
+                if (!neighbor.isVisited) {
+                    queue.add(neighbor);
+                    neighbor.isVisited = true;
+                    neighbor.parent = currentNode;
+                }
+            }
+        }
+    }
 }
