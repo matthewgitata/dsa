@@ -27,7 +27,8 @@ public class Main {
 
         System.out.println(g.toString());
 
-        g.bfs();
+//        g.bfs();
+        g.dfs();
 
     }
 }

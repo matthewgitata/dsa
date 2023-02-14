@@ -3,6 +3,7 @@ package com.matthewgitata.dsa.graph.adjacencymatrix;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 /**
  * The {@code Graph} class defines the properties of a
@@ -102,4 +103,35 @@ public class Graph {
         }
     }
 
+    /**
+     * DFS Internal
+     */
+
+    void dfsFirst(GraphNode node) {
+        Stack<GraphNode> stack = new Stack<>();
+        stack.push(node);
+        while (!stack.isEmpty()) {
+            GraphNode currentNode = stack.pop();
+            currentNode.isVisited = true;
+            System.out.print(currentNode.name + " ");
+            ArrayList<GraphNode> neighbors = getNeighbors(currentNode);
+            for (GraphNode neighbor : neighbors) {
+                if (!neighbor.isVisited) {
+                    stack.push(neighbor);
+                    neighbor.isVisited = true;
+                }
+            }
+        }
+    }
+
+    /**
+     * DFS
+     */
+    void dfs() {
+        for (GraphNode node : nodeList) {
+            if (!node.isVisited) {
+                dfsFirst(node);
+            }
+        }
+    }
 }
