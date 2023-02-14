@@ -18,20 +18,18 @@ public class Main {
         nodeList.add(new GraphNode("E", 4));
         nodeList.add(new GraphNode("F", 5));
         nodeList.add(new GraphNode("G", 6));
-        nodeList.add(new GraphNode("H", 7));
 
-        Graph graph = new Graph(nodeList);
+        Graph g = new Graph(nodeList);
+        g.addUndirected(0,1);
+        g.addUndirected(0, 2);
+        g.addUndirected(1, 3);
+        g.addUndirected(1, 6);
+        g.addUndirected(2, 3);
+        g.addUndirected(2, 4);
+        g.addUndirected(3, 5);
+        g.addUndirected(4, 5);
+        g.addUndirected(5, 6);
 
-        graph.addDirectedEdge(0, 2);
-        graph.addDirectedEdge(1, 2);
-        graph.addDirectedEdge(2, 4);
-        graph.addDirectedEdge(4, 7);
-        graph.addDirectedEdge(4, 5);
-        graph.addDirectedEdge(5, 6);
-        graph.addDirectedEdge(1, 3);
-        graph.addDirectedEdge(3, 5);
-
-        System.out.println(graph);
-        graph.topologicalSort();
+        g.BFSForSSSPP(nodeList.get(0));
     }
 }
