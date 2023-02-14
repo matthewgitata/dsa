@@ -24,7 +24,8 @@ public class Main {
         g.addUndirected(1, 4);
         g.addUndirected(2, 3);
         g.addUndirected(3, 4);
-
+        
         System.out.println(g.toString());
+        g.bfs();
     }
 }

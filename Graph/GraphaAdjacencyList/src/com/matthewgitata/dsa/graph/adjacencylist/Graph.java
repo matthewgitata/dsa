@@ -1,6 +1,7 @@
 package com.matthewgitata.dsa.graph.adjacencylist;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 /**
  * The {@code Graph} class defines a Graph object's
@@ -48,5 +49,35 @@ public class Graph {
             sb.append("\n");
         }
         return sb.toString();
+    }
+
+    /**
+     * BFS Internal.
+     */
+    void bfsVisit(GraphNode node) {
+        LinkedList<GraphNode> queue = new LinkedList<>();
+        queue.add(node);
+        while (!queue.isEmpty()) {
+            GraphNode currentNode = queue.remove(0);
+            currentNode.isVisited = true;
+            System.out.print(currentNode.name + " ");
+            for (GraphNode neighbor : currentNode.neighbors) {
+                if (!neighbor.isVisited) {
+                    queue.add(neighbor);
+                    neighbor.isVisited = true;
+                }
+            }
+        }
+    }
+
+    /**
+     * BFS
+     */
+    void bfs() {
+        for (GraphNode node : nodeList) {
+            if (!node.isVisited) {
+                bfsVisit(node);
+            }
+        }
     }
 }
