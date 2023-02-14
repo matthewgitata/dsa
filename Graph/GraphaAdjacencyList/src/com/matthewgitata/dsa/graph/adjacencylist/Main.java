@@ -16,19 +16,22 @@ public class Main {
         nodeList.add(new GraphNode("C", 2));
         nodeList.add(new GraphNode("D", 3));
         nodeList.add(new GraphNode("E", 4));
+        nodeList.add(new GraphNode("F", 5));
+        nodeList.add(new GraphNode("G", 6));
+        nodeList.add(new GraphNode("H", 7));
 
-        Graph g = new Graph(nodeList);
-        g.addUndirected(0, 1);
-        g.addUndirected(0, 2);
-        g.addUndirected(0, 3);
-        g.addUndirected(1, 4);
-        g.addUndirected(2, 3);
-        g.addUndirected(3, 4);
+        Graph graph = new Graph(nodeList);
 
-        System.out.println(g.toString());
-//        System.out.println("BFS");
-//        g.bfs();
-        System.out.println("DFS");
-        g.dfs();
+        graph.addDirectedEdge(0, 2);
+        graph.addDirectedEdge(1, 2);
+        graph.addDirectedEdge(2, 4);
+        graph.addDirectedEdge(4, 7);
+        graph.addDirectedEdge(4, 5);
+        graph.addDirectedEdge(5, 6);
+        graph.addDirectedEdge(1, 3);
+        graph.addDirectedEdge(3, 5);
+
+        System.out.println(graph);
+        graph.topologicalSort();
     }
 }

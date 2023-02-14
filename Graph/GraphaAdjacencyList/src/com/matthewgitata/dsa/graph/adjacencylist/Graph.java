@@ -111,4 +111,45 @@ public class Graph {
             }
         }
     }
+
+    /**
+     * Add node edges to Graph, directed
+     *
+     * @param i the index of first vertex
+     * @param j the index of second vertex
+     */
+    public void addDirectedEdge(int i, int j) {
+        GraphNode first = nodeList.get(i);
+        GraphNode second = nodeList.get(j);
+        first.neighbors.add(second);
+    }
+
+    /**
+     * Topological internal.
+     */
+    void topologicalVisit(GraphNode node, Stack<GraphNode> stack) {
+        for (GraphNode neighbor : node.neighbors) {
+            if (!neighbor.isVisited) {
+                topologicalVisit(neighbor, stack);
+            }
+        }
+        node.isVisited = true;
+        stack.push(node);
+    }
+
+    /**
+     * Topological Sort.
+     */
+    void topologicalSort() {
+        Stack<GraphNode> stack = new Stack<>();
+        for (GraphNode node : nodeList) {
+            if (!node.isVisited) {
+                topologicalVisit(node, stack);
+
+            }
+        }
+        while (!stack.isEmpty()) {
+            System.out.print(stack.pop().name + " ");
+        }
+    }
 }
