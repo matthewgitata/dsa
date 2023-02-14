@@ -134,4 +134,46 @@ public class Graph {
             }
         }
     }
+
+    /**
+     * Add node edges to adjacency matrix, directed.
+     *
+     * @param i the index of first node
+     * @param j the index of second node
+     */
+    public void addDirectedEdge(int i, int j) {
+        adjacencyMatrix[i][j] = 1;
+    }
+
+    /**
+     * Internal Topological Sort.
+     *
+     * @param node  the node to visit.
+     * @param stack the stack to push {@code node} to
+     */
+    public void topologicalVisit(GraphNode node, Stack<GraphNode> stack) {
+        ArrayList<GraphNode> neighbors = getNeighbors(node);
+        for (GraphNode neighbor : neighbors) {
+            if (!neighbor.isVisited) {
+                topologicalVisit(neighbor, stack);
+            }
+        }
+        node.isVisited = true;
+        stack.push(node);
+    }
+
+    /**
+     * Topological Sort.
+     */
+    void topologicalSort() {
+        Stack<GraphNode> stack = new Stack<>();
+        for (GraphNode node : nodeList) {
+            if (!node.isVisited) {
+                topologicalVisit(node, stack);
+            }
+        }
+        while (!stack.isEmpty()) {
+            System.out.print(stack.pop().name + " ");
+        }
+    }
 }
