@@ -2,6 +2,7 @@ package com.matthewgitata.dsa.graph.adjacencylist;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.Stack;
 
 /**
  * The {@code Graph} class defines a Graph object's
@@ -77,6 +78,36 @@ public class Graph {
         for (GraphNode node : nodeList) {
             if (!node.isVisited) {
                 bfsVisit(node);
+            }
+        }
+    }
+
+    /**
+     * DFS Internal
+     */
+    void dfsVisit(GraphNode node) {
+        Stack<GraphNode> stack = new Stack<>();
+        stack.push(node);
+        while (!stack.isEmpty()) {
+            GraphNode currentNode = stack.pop();
+            currentNode.isVisited = true;
+            System.out.print(currentNode.name + " ");
+            for (GraphNode neighbor : currentNode.neighbors) {
+                if (!neighbor.isVisited) {
+                    stack.push(neighbor);
+                    neighbor.isVisited = true;
+                }
+            }
+        }
+    }
+
+    /**
+     * DFS
+     */
+    void dfs() {
+        for (GraphNode node : nodeList) {
+            if (!node.isVisited) {
+                dfsVisit(node);
             }
         }
     }
