@@ -17,16 +17,16 @@ public class Main {
         nodeList.add(new WeightedNode("D", 3));
         nodeList.add(new WeightedNode("E", 4));
 
-        Kruskal graph = new Kruskal(nodeList);
-        graph.addWeightedUndirectedEdge(0, 1, 5);
-        graph.addWeightedUndirectedEdge(0, 2, 13);
-        graph.addWeightedUndirectedEdge(0, 4, 15);
-        graph.addWeightedUndirectedEdge(1, 2, 10);
-        graph.addWeightedUndirectedEdge(1, 3, 8);
-        graph.addWeightedUndirectedEdge(2, 3, 6);
-        graph.addWeightedUndirectedEdge(2, 4, 20);
+        Prims graph = new Prims(nodeList);
+        graph.addUndirectedEdge(0, 1, 5);
+        graph.addUndirectedEdge(0, 2, 13);
+        graph.addUndirectedEdge(0, 4, 15);
+        graph.addUndirectedEdge(1, 2, 10);
+        graph.addUndirectedEdge(1, 3, 8);
+        graph.addUndirectedEdge(2, 3, 6);
+        graph.addUndirectedEdge(2, 4, 20);
 
-        System.out.println("Running Kruskal Algo on the graph: ");
-        graph.Kruskal();
+        System.out.println("Running Prims Algo on the graph: ");
+        graph.Prims(nodeList.get(4));
     }
 }
