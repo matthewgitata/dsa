@@ -15,18 +15,18 @@ public class Main {
         nodeList.add(new WeightedNode("B", 1));
         nodeList.add(new WeightedNode("C", 2));
         nodeList.add(new WeightedNode("D", 3));
+        nodeList.add(new WeightedNode("E", 4));
 
-        DisjointSet.makeSet(nodeList);
+        Kruskal graph = new Kruskal(nodeList);
+        graph.addWeightedUndirectedEdge(0, 1, 5);
+        graph.addWeightedUndirectedEdge(0, 2, 13);
+        graph.addWeightedUndirectedEdge(0, 4, 15);
+        graph.addWeightedUndirectedEdge(1, 2, 10);
+        graph.addWeightedUndirectedEdge(1, 3, 8);
+        graph.addWeightedUndirectedEdge(2, 3, 6);
+        graph.addWeightedUndirectedEdge(2, 4, 20);
 
-        WeightedNode firstNode = nodeList.get(0);
-        WeightedNode secondNode = nodeList.get(1);
-
-        DisjointSet.findSet(firstNode);
-        DisjointSet output = DisjointSet.findSet(secondNode);
-        output.printAllNodesOfThisSet();
-
-        DisjointSet.union(firstNode, secondNode);
-        output = DisjointSet.findSet(secondNode);
-        output.printAllNodesOfThisSet();
+        System.out.println("Running Kruskal Algo on the graph: ");
+        graph.Kruskal();
     }
 }
